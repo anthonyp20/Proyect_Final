@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Chat</title>
+  <title>Movie - Final Project</title>
+  <!-- Agregamos el CDN de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -26,8 +28,6 @@
     }
 
     .movie-section {
-      display: flex;
-      align-items: center;
       background-color: #000;
       border-radius: 15px;
       box-shadow: 0 0 15px #00f0ff55;
@@ -35,18 +35,15 @@
       overflow: hidden;
       max-width: 800px;
       width: 100%;
-      flex-direction: column; /* Ajuste para móviles */
     }
 
     .movie-img {
-      width: 100%; /* Imagen ocupa todo el ancho en móviles */
+      width: 100%;
       height: auto;
-      max-width: 100%; /* Evita desbordamientos */
     }
 
     .dialogues {
       padding: 20px;
-      width: 100%; /* Ajuste para móviles */
     }
 
     .message {
@@ -79,145 +76,79 @@
     .hidden {
       display: none;
     }
-
-    /* Responsive para tablets (768px - 1024px) */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      h1 {
-        font-size: 2.2em;
-      }
-
-      .movie-section {
-        flex-direction: row; /* Vuelve al diseño horizontal */
-      }
-
-      .movie-img {
-        width: 50%; /* Imagen ocupa la mitad del contenedor */
-      }
-
-      .dialogues {
-        padding: 15px;
-      }
-
-      .message {
-        font-size: 1em;
-      }
-    }
-
-    /* Responsive para celulares (hasta 767px) */
-    @media (max-width: 767px) {
-      h1 {
-        font-size: 1.8em;
-      }
-
-      .movie-section {
-        flex-direction: column; /* Diseño vertical */
-      }
-
-      .movie-img {
-        width: 100%; /* Imagen ocupa todo el ancho */
-      }
-
-      .dialogues {
-        padding: 10px;
-      }
-
-      .message {
-        font-size: 0.9em;
-      }
-
-      .start-button {
-        padding: 10px 20px;
-        font-size: 16px;
-      }
-    }
-
-    /* Responsive para celulares pequeños (hasta 480px) */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5em;
-      }
-
-      .movie-section {
-        margin: 10px 0;
-      }
-
-      .message {
-        font-size: 0.85em;
-      }
-
-      .start-button {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 
 <body>
 
   <div class="presentation" id="presentation">
-    <img src="img/Captura_de_pantalla_2025-04-27_202500-removebg-preview.png" alt="Presentation">
+    <img src="img/Captura_de_pantalla_2025-04-27_202500-removebg-preview.png" alt="Presentation" class="img-fluid">
   </div>
 
   <h1>🎬 Movie Conversation 🎬</h1>
 
-  <div class="movie-section">
-    <img class="movie-img" src="https://www.worldsrc.net/thumb/films/thumb_eca_WorldSrc.net_The_Godfather_poster.jpg" alt="The Godfather">
-    <div class="dialogues">
-      <div class="message">
-        <span class="name">Oliver:</span> Hey Anthony, what's up? Seen any good movies lately?
+  <div class="container">
+    <div class="row movie-section">
+      <div class="col-md-6">
+        <img class="movie-img img-fluid" src="https://www.worldsrc.net/thumb/films/thumb_eca_WorldSrc.net_The_Godfather_poster.jpg" alt="The Godfather">
       </div>
-      <div class="message">
-        <span class="name">Anthony:</span> Hey Oliver! Yeah, a couple. But if we're talking about the best I've seen... I think it would have to be "The Godfather." It's a classic, the acting is incredible, and the story... amazing! What about you? What's your favorite?
+      <div class="col-md-6 dialogues">
+        <div class="message">
+          <span class="name">Oliver:</span> Hey Anthony, what's up? Seen any good movies lately?
+        </div>
+        <div class="message">
+          <span class="name">Anthony:</span> Hey Oliver! Yeah, a couple. But if we're talking about the best I've seen... I think it would have to be "The Godfather." It's a classic, the acting is incredible, and the story... amazing! What about you? What's your favorite?
+        </div>
+      </div>
+    </div>
+
+    <div class="row movie-section">
+      <div class="col-md-6">
+        <img class="movie-img img-fluid" src="https://upload.wikimedia.org/wikipedia/en/1/11/2001_A_Space_Odyssey_%281968%29.png" alt="2001: A Space Odyssey">
+      </div>
+      <div class="col-md-6 dialogues">
+        <div class="message">
+          <span class="name">Oliver:</span> "The Godfather" is a masterpiece, no doubt! But my favorite is "2001: A Space Odyssey." I know it's a bit... different, but the aesthetics, the music, the way it makes you think... it's a masterpiece! It had me thinking for days. What did you think of that one?
+        </div>
+        <div class="message">
+          <span class="name">Anthony:</span> I've seen it, yeah. It's very... peculiar. It's not the kind of movie that immediately grabs me, but I recognize its importance and its impact on cinema. The Strauss music is great. But for me, the emotion and intensity of "The Godfather" are unbeatable. The tension, the betrayals... it's a rollercoaster!
+        </div>
+      </div>
+    </div>
+
+    <div class="row movie-section">
+      <div class="col-md-6">
+        <img class="movie-img img-fluid" src="https://i.ebayimg.com/00/s/MTYwMFgxMDgw/z/lyAAAOSwzjdZ1nN~/$_57.JPG?set_id=8800005007" alt="Blade Runner 2049">
+      </div>
+      <div class="col-md-6 dialogues">
+        <div class="message">
+          <span class="name">Oliver:</span> I understand. It's a matter of taste, I guess. I'm more drawn to the exploration of ideas and the atmosphere of "2001," while "The Godfather" is more of a character-driven drama. Both are excellent films, though.
+        </div>
+        <div class="message">
+          <span class="name">Anthony:</span> Totally agree. There's room for all kinds of cinema. How about next time we watch a movie together and then compare our opinions?
+        </div>
+        <div class="message">
+          <span class="name">Oliver:</span> I'd love that! How about "Blade Runner 2049"? It's visually stunning.
+        </div>
+        <div class="message">
+          <span class="name">Anthony:</span> Good idea! "Blade Runner 2049" sounds interesting. I accept the challenge. See you soon.
+        </div>
+        <div class="message">
+          <span class="name">Oliver:</span> See you!
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="movie-section">
-    <img class="movie-img" src="https://upload.wikimedia.org/wikipedia/en/1/11/2001_A_Space_Odyssey_%281968%29.png" alt="2001: A Space Odyssey">
-    <div class="dialogues">
-      <div class="message">
-        <span class="name">Oliver:</span> "The Godfather" is a masterpiece, no doubt! But my favorite is "2001: A Space Odyssey." I know it's a bit... different, but the aesthetics, the music, the way it makes you think... it's a masterpiece! It had me thinking for days. What did you think of that one?
-      </div>
-      <div class="message">
-        <span class="name">Anthony:</span> I've seen it, yeah. It's very... peculiar. It's not the kind of movie that immediately grabs me, but I recognize its importance and its impact on cinema. The Strauss music is great. But for me, the emotion and intensity of "The Godfather" are unbeatable. The tension, the betrayals... it's a rollercoaster!
-      </div>
-    </div>
-  </div>
-
-  <div class="movie-section">
-    <img class="movie-img" src="https://i.ebayimg.com/00/s/MTYwMFgxMDgw/z/lyAAAOSwzjdZ1nN~/$_57.JPG?set_id=8800005007" alt="Blade Runner 2049">
-    <div class="dialogues">
-      <div class="message">
-        <span class="name">Oliver:</span> I understand. It's a matter of taste, I guess. I'm more drawn to the exploration of ideas and the atmosphere of "2001," while "The Godfather" is more of a character-driven drama. Both are excellent films, though.
-      </div>
-      <div class="message">
-        <span class="name">Anthony:</span> Totally agree. There's room for all kinds of cinema. How about next time we watch a movie together and then compare our opinions?
-      </div>
-      <div class="message">
-        <span class="name">Oliver:</span> I'd love that! How about "Blade Runner 2049"? It's visually stunning.
-      </div>
-      <div class="message">
-        <span class="name">Anthony:</span> Good idea! "Blade Runner 2049" sounds interesting. I accept the challenge. See you soon.
-      </div>
-      <div class="message">
-        <span class="name">Oliver:</span> See you!
-      </div>
-    </div>
-  </div>
 
   <script>
     function startProject() {
       document.getElementById('presentation').style.display = 'none';
-      document.getElementById('title').classList.remove('hidden');
-      document.getElementById('conversation').classList.remove('hidden');
-      document.getElementById('movies').classList.remove('hidden');
-
-      // Agregar una pequeña animación
-      document.getElementById('conversation').classList.add('show');
-      document.getElementById('movies').classList.add('show');
     }
   </script>
+
+  <!-- Agregamos el CDN de Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
